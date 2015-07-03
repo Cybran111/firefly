@@ -1,5 +1,5 @@
 from wsgiref.simple_server import make_server
-from example_middleware import cache_middleware, reverse_middleware
+from example_middleware import cache_middleware
 
 from views import router
 
