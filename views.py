@@ -1,8 +1,10 @@
+import time
 from util import controller, Response, Router
 
 
 @controller
 def index(request):
+    time.sleep(2)
     return Response(200, "It works!")
 
 @controller
@@ -10,14 +12,7 @@ def hello(request):
     name = request.GET.get('name', ["Anonymous"])[0]
     return Response(200, "Hello %s" % name)
 
-
-@controller
-def helloworld(request):
-    name = request.GET.get('name', ["Anonymous"])[0]
-    return Response(200, "Hello %s" % name)
-
 router = Router({
     '/index': index,
     '/hello': hello,
-    '/helloworld': helloworld,
 })
