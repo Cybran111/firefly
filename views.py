@@ -10,7 +10,14 @@ def hello(request):
     name = request.GET.get('name', ["Anonymous"])[0]
     return Response(200, "Hello %s" % name)
 
+
+@controller
+def helloworld(request):
+    name = request.GET.get('name', ["Anonymous"])[0]
+    return Response(200, "Hello %s" % name)
+
 router = Router({
     '/index': index,
     '/hello': hello,
+    '/helloworld': helloworld,
 })
